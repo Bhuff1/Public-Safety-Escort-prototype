@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	    <script src ="js/ps_scripts.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="css/main_page_styles.css">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300|Open+Sans:700" />
+	   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body onload="getLandingPageDate()">
+        <header class="masthead" role="banner">
+		<h1>DePaul University</h1>
+		<h3>Public Safety Escort Service</h3>
+        <img src="css/depaul.jpeg" alt="DePaul Logo" class="my-icon">
+		<nav role="navigation">
+			<ul class="nav-main">
+				<div class="dropdown">
+            				<button class="dropbtn">Setup</button>
+                                <!--
+                				<div class="dropdown-content">
+                  					<a href="#">Officers</a>
+                				</div>
+                                -->
+                </div>
+				<div class="dropdown">
+              				<button class="dropbtn">Data</button>
+                            <!--
+                				<div class="dropdown-content">
+                    					<a href="#">Date</a>
+                    					<a href="#">Officer</a>
+							            <a href="#">Pickup/Dropoff</a>
+                				</div>
+                            -->
+                </div>
+				<div class="dropdown">
+            				<button class="dropbtn">Logout</button>
+                                <!--
+                				<div class="dropdown-content">
+                      				</div>
+                                -->
+                </div>
+			</ul>               		
+	   </header>
+       <div id="date">
+       </div>
+  	   <fieldset class="new-escort-fieldset">
+    		<legend class="new-escort-legend">New Escort</legend>
+    			<table class="table_styles"> 
+        			<tr>
+					<td class="grid-item-header">Assigned To
+ 					</td>
+					<td class="grid-item-header">From
+ 					</td>
+					<td class="grid-item-header">To
+ 					</td>
+					<td class="grid-item-header">Num Passengers
+ 					</td>
+					<td class="grid-item-header">Assign
+ 					</td>
+        			</tr>
+        			<tr>
+		  			<td class="grid-item">
+  						<select id="selDriver">
+							<option value="none"></option>
+							<option value="l50">L50</option>
+        				    <option value="l1">L1</option>
+        				    <option value="l2">L2</option>
+	    			        <option value="l80">L80</option>
+        				    <option value="l1A">L1A</option>
+        				    <option value="l1B">L1B</option>
+                            <option value="l1C">L1C</option>
+							<option value="l2A">L2A</option>
+	    			        <option value="l2B">L2B</option>
+    				    </select>	
+ 					</td>
+  					<td class="grid-item">
+						<select id="selPickup">
+              		        <option value="elevenfifty">1150 W. Fullerton</option>
+                            <option value="nineninety">990 W. Fullerton</option>
+                            <option value="twentyfourhundred">2400 W. Fullerton</option>
+                            <option value="artsAndLetters">Arts and Letters</option>
+                            <option value="atcAnnex">ATC Annex</option>
+                            <option value="atc">ATC (Sullivan Athletic Center)</option>
+                            <option value="belRacineHall">Belden/Racine Hall</option>
+                            <option value="byrne">Byrne</option>
+                            <option value="centennial">Centennial Hall</option>
+                            <option value="clifFulHall">Clifton/Fullerton Hall</option>
+                            <option value="cliftonParking">Clifton Parking Garage</option>
+                            <option value="coe">College of Education</option>
+                            <option value="concert">Concert Hall</option>
+                            <option value="corcoran">Corcoran Hall</option>
+                            <option value="commons">Cortelyou Commons</option>
+                            <option value="courtsideApartments">Courtside Apartments</option>
+                            <option value="el">L</option>
+                            <option value="library">Library</option>
+                            <option value="mccabe">McCabe Hall</option>
+                            <option value="mcgowanSouth">McGowan South</option>
+                            <option value="munHall">Munroe Hall</option>
+                            <option value="quad">Quad</option>
+                            <option value="racineProp">Racine Properties</option>
+                            <option value="ray">Ray Meyer Fitness Center</option>
+                            <option value="sac">SAC</option>
+                            <option value="sanctuaryTownhomes">Sanctuary Townhomes</option>
+                            <option value="sanctuaryHall">Sanctuary Hall</option>
+                            <option value="schoolOfMusic">School of Music</option>
+                            <option value="schoolOfMusicAnnex">School of Music Annex</option>
+                            <option value="sheffieldParking">Sheffield Parking Garage</option>
+                            <option value="shefSqApts">Sheffield Square Apartments</option>
+                            <option value="church">St. Vincent's Church</option>
+                            <option value="studentCenter">Student Center</option>
+                            <option value="theatre">Theatre School</option>
+                            <option value="univHall">University Hall</option>
+                            <option value="vincentianRes">Vincentian Residence</option>
+                            <option value="vincentAndLouise">Vincent and Louise House</option>
+                            <option value="wishField">Wish Field</option>					
+    				    </select>  
+  					</td>
+  					<td class="grid-item">
+ 						<select id="selDropOff">
+                            <option value="elevenfifty">1150 W. Fullerton</option>
+                            <option value="nineninety">990 W. Fullerton</option>
+                            <option value="twentyfourhundred">2400 W. Fullerton</option>
+                            <option value="artsAndLetters">Arts and Letters</option>
+                            <option value="atcAnnex">ATC Annex</option>
+                            <option value="atc">ATC (Sullivan Athletic Center)</option>
+                            <option value="belRacineHall">Belden/Racine Hall</option>
+                            <option value="byrne">Byrne</option>
+                            <option value="centennial">Centennial Hall</option>
+                            <option value="clifFulHall">Clifton/Fullerton Hall</option>
+                            <option value="cliftonParking">Clifton Parking Garage</option>
+                            <option value="coe">College of Education</option>
+                            <option value="concert">Concert Hall</option>
+                            <option value="corcoran">Corcoran Hall</option>
+                            <option value="commons">Cortelyou Commons</option>
+                            <option value="courtsideApartments">Courtside Apartments</option>
+                            <option value="el">L</option>
+                            <option value="library">Library</option>
+                            <option value="mccabe">McCabe Hall</option>
+                            <option value="mcgowanSouth">McGowan South</option>
+                            <option value="munHall">Munroe Hall</option>
+                            <option value="quad">Quad</option>
+                            <option value="racineProp">Racine Properties</option>
+                            <option value="ray">Ray Meyer Fitness Center</option>
+                            <option value="sac">SAC</option>
+                            <option value="sanctuaryTownhomes">Sanctuary Townhomes</option>
+                            <option value="sanctuaryHall">Sanctuary Hall</option>
+                            <option value="schoolOfMusic">School of Music</option>
+                            <option value="schoolOfMusicAnnex">School of Music Annex</option>
+                            <option value="sheffieldParking">Sheffield Parking Garage</option>
+                            <option value="shefSqApts">Sheffield Square Apartments</option>
+                            <option value="church">St. Vincent's Church</option>
+                            <option value="studentCenter">Student Center</option>
+                            <option value="theatre">Theatre School</option>
+                            <option value="univHall">University Hall</option>
+                            <option value="vincentianRes">Vincentian Residence</option>
+                            <option value="vincentAndLouise">Vincent and Louise House</option>
+                            <option value="wishField">Wish Field</option>									        
+                        </select>
+					</td>  
+					<td class="grid-item">
+						<select id="selNumPsngers">
+                            <option value="one">1</option>
+                            <option value="two">2</option>
+                            <option value="three">3</option>
+                        </select>
+  					</td>
+  					<td class="grid-item">
+  						<input type="submit" value="+" onclick="appendToActiveEscorts()">
+  					</td>
+        			</tr>        
+    			</table>
+	</fieldset>
+	<fieldset class="active-escort-fieldset">
+    		<legend class="active-escort-legend">Active Escorts</legend>
+			<table id="table_active_escorts" class="table_styles">
+        			<tr>
+					<td class="grid-item-header-two">Escort Num
+					</td>
+					<td class="grid-item-header-two">Assigned To
+ 					</td>
+					<td class="grid-item-header-two">From
+ 					</td>
+					<td class="grid-item-header-two">To
+ 					</td>
+					<td class="grid-item-header-two">Num Passengers
+ 					</td>
+					<td class="grid-item-header-two">Time
+ 					</td>
+					<td class="grid-item-header-two">No Show
+ 					</td>
+                    <td class="grid-item-header-two">Edit
+ 					</td>
+					<td class="grid-item-header-two">Delete
+ 					</td>
+					<td class="grid-item-header-two">Clear
+					</td> 
+        			</tr>
+    			</table>
+	</fieldset>
+	<fieldset class="completed-escort-fieldset">
+    		<legend class="completed-escort-legend">Completed Escorts</legend>
+    			<table id="table_completed_escorts" class="table_styles">
+        			<tr>
+					<td class="grid-item-header-three">Escort Num
+					</td>
+					<td class="grid-item-header-three">Assigned To
+ 					</td>
+					<td class="grid-item-header-three">From
+ 					</td>
+					<td class="grid-item-header-three">To
+ 					</td>
+					<td class="grid-item-header-three">Num Passengers
+ 					</td>
+					<td class="grid-item-header-three">Time
+ 					</td>
+					<td class="grid-item-header-three">Dropoff Time
+ 					</td>
+					<td class="grid-item-header-three">No Show
+ 					</td>
+                    <td class="grid-item-header-three">Edit
+ 					</td>
+        			</tr>
+			</table> 
+	</fieldset> 
+    <button style="font-size:24px" onclick="printCompletedEscorts()"><i class="material-icons">print</i></button>
+    <div id="output">
+    </div>
+	</body>
+</html>
+
+
+
